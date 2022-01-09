@@ -34,7 +34,7 @@ export default class App extends React.Component {
           }}
           value={this.state.text}
         />
-        <TouchableOpacity>
+        <TouchableOpacity
           style={styles.goButton}
           onPress={() => {
             var word = this.state.text.toLowerCase().trim()
@@ -43,7 +43,8 @@ export default class App extends React.Component {
             this.setState({ type: localdict[word].type })
             ):
             alert("This word is not in the dictionary yet, please check back later.")
-          }}
+          }}>
+          <Text style={styles.buttonText}>GO</Text>
         </TouchableOpacity>
       </View>
     );
